@@ -1,0 +1,15 @@
+# Project
+/out/
+/lib/
+/libs/
+/build/
+/target/
+/logs/
+.*
+!.gitignore
+*.iml
+/gradle/wrapper/gradle-wrapper.jar
+
+# Runtime workspace
+/*.yml
+/*.json
