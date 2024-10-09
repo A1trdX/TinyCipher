@@ -15,10 +15,10 @@ import picocli.CommandLine.Parameters;
 @Command(name = "encrypt", description = "Encrypt file.")
 public class EncryptCommand implements Callable<Void> {
 
-    @Parameters(index = "0", paramLabel = "<input_file>", description = "Input file")
+    @Parameters(index = "0", paramLabel = "<input>", description = "Path to input file")
     private Path inputFile;
 
-    @Parameters(index = "1", paramLabel = "<output_file>", description = "Output file")
+    @Parameters(index = "1", paramLabel = "<output>", description = "Path to output file")
     private Path outputFile;
 
     @Option(names = { "-h", "--help" }, usageHelp = true, hidden = true)
