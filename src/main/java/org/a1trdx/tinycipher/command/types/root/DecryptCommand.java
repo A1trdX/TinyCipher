@@ -47,7 +47,7 @@ public class DecryptCommand implements Callable<Void> {
             outputBytes = CipherTool.decrypt(inputBytes, passwordBytes);
         } catch (CipherToolException ex) {
             if (ex.getCause() instanceof AEADBadTagException) {
-                ConsoleUtils.printLine("Incorrect password!");
+                ConsoleUtils.printLine("Invalid password!");
                 return null;
             } else {
                 throw ex;
