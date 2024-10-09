@@ -1,0 +1,42 @@
+plugins {
+    id 'com.gradleup.shadow' version '8.3.3'
+    id 'java'
+}
+
+group 'org.a1trdx'
+version '0.1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    compileJava.options.encoding = "UTF-8"
+    compileTestJava.options.encoding = "UTF-8"
+}
+
+repositories {
+    mavenCentral()
+}
+
+// Disable additional jar file generation by "java" plugin. We have "shadow" already.
+jar.enabled = false
+
+// Manifest options
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.a1trdx.tinycipher.Boot',
+                'Class-Path': configurations.runtimeClasspath.collect {
+                    "lib/${it.getName()}"
+                }.join(' ')
+        )
+    }
+}
+
+// Create jar file
+shadowJar {
+    archiveBaseName.set('TinyCipher')
+    archiveClassifier.set('')
+    mergeServiceFiles()
+}
+
+build.dependsOn(shadowJar)
