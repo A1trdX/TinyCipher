@@ -36,7 +36,12 @@ jar {
 shadowJar {
     archiveBaseName.set('TinyCipher')
     archiveClassifier.set('')
+
     mergeServiceFiles()
+
+    from('LICENSE') {
+        into 'META-INF/'
+    }
 }
 
 build.dependsOn(shadowJar)
