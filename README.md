@@ -1,6 +1,6 @@
 # TinyCipher
 
-A simple CLI tool to encrypt or decrypt files.
+Simple CLI tool to encrypt or decrypt files.
 
 
 
